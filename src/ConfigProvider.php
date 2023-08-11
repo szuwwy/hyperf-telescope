@@ -9,6 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace Wind\Telescope;
 
 class ConfigProvider
@@ -31,14 +32,14 @@ class ConfigProvider
                 'engine' => \Wind\Telescope\TemplateEngine::class,
                 'mode' => \Hyperf\View\Mode::SYNC,
                 'config' => [
-                    'view_path' => BASE_PATH . '/vendor/windawake/hyperf-telescope/storage/view/',
+                    'view_path' => BASE_PATH . '/vendor/wwy/hyperf-telescope/storage/view/',
                     'cache_path' => BASE_PATH . '/runtime/view/',
                 ],
             ],
             'server' => [
                 'settings' => [
                     // 静态资源
-                    'document_root' => BASE_PATH . '/vendor/windawake/hyperf-telescope/public',
+                    'document_root' => BASE_PATH . '/vendor/wwy/hyperf-telescope/public',
                     'enable_static_handler' => true,
                 ],
             ],

@@ -2,7 +2,7 @@
 
 参考laravel telescope的代码开发出来的适用于hyperf的调试工具
 
-`composer require windawake/hyperf-telescope dev-master`
+`composer require wwy/hyperf-telescope dev-master`
 
 ## 一键安装telescope
 `php ./bin/hyperf.php telescope:install`
@@ -10,7 +10,7 @@
 ## 如果一键安装有问题，请尝试下面安装方式：
 
 #### 复制migrations到根目录
-`php ./bin/hyperf.php vendor:publish windawake/hyperf-telescope`
+`php ./bin/hyperf.php vendor:publish wwy/hyperf-telescope`
 
 #### 运行数据库表迁移
 `php ./bin/hyperf.php migrate`

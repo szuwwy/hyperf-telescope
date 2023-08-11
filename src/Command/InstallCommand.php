@@ -9,6 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace Wind\Telescope\Command;
 
 use Hyperf\Command\Command;
@@ -35,7 +36,7 @@ class InstallCommand extends Command
 
         $output = new NullOutput();
 
-        $input = new ArrayInput(['command' => 'vendor:publish', 'package' => 'windawake/hyperf-telescope']);
+        $input = new ArrayInput(['command' => 'vendor:publish', 'package' => 'wwy/hyperf-telescope']);
         $exitCode = $application->run($input, $output);
         if (! $exitCode) {
             $this->info('publish successfully');
