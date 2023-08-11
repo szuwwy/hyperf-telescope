@@ -9,18 +9,19 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace Wind\Telescope\Listener;
 
-use Hyperf\Database\Events\QueryExecuted;
-use Hyperf\Event\Annotation\Listener;
-use Hyperf\Event\Contract\ListenerInterface;
-use Hyperf\HttpServer\Router\Dispatched;
 use Hyperf\Utils\Arr;
-use Hyperf\Utils\Context;
-use Psr\Http\Message\ResponseInterface;
+use Hyperf\Context\Context;
 use Wind\Telescope\EntryType;
-use Wind\Telescope\Event\RpcHandled;
 use Wind\Telescope\IncomingEntry;
+use Wind\Telescope\Event\RpcHandled;
+use Hyperf\Event\Annotation\Listener;
+use Psr\Http\Message\ResponseInterface;
+use Hyperf\HttpServer\Router\Dispatched;
+use Hyperf\Database\Events\QueryExecuted;
+use Hyperf\Event\Contract\ListenerInterface;
 
 /**
  * @Listener
@@ -37,7 +38,7 @@ class RpcHandledListener implements ListenerInterface
     /**
      * @param QueryExecuted $event
      */
-    public function process(object $event)
+    public function process(object $event): void
     {
         if ($event instanceof RpcHandled) {
             /**
