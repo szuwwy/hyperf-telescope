@@ -9,14 +9,15 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace Wind\Telescope\Listener;
 
-use Hyperf\Database\Events\QueryExecuted;
-use Hyperf\Event\Annotation\Listener;
-use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Utils\Arr;
-use Hyperf\Utils\Context;
 use Hyperf\Utils\Str;
+use Hyperf\Context\Context;
+use Hyperf\Event\Annotation\Listener;
+use Hyperf\Database\Events\QueryExecuted;
+use Hyperf\Event\Contract\ListenerInterface;
 
 /**
  * @Listener
@@ -33,7 +34,7 @@ class QueryListener implements ListenerInterface
     /**
      * @param QueryExecuted $event
      */
-    public function process(object $event)
+    public function process(object $event): void
     {
         if ($event instanceof QueryExecuted) {
             $sql = $event->sql;
