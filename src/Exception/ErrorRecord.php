@@ -11,11 +11,11 @@ declare(strict_types=1);
  */
 namespace Wind\Telescope\Exception;
 
-use Hyperf\ExceptionHandler\ExceptionHandler;
-use Hyperf\HttpMessage\Stream\SwooleStream;
-use Hyperf\Utils\Context;
-use Psr\Http\Message\ResponseInterface;
 use Throwable;
+use Hyperf\Context\Context;
+use Psr\Http\Message\ResponseInterface;
+use Hyperf\HttpMessage\Stream\SwooleStream;
+use Hyperf\ExceptionHandler\ExceptionHandler;
 
 class ErrorRecord extends ExceptionHandler
 {

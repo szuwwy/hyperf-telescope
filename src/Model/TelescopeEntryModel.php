@@ -5,7 +5,7 @@ declare(strict_types=1);
  * This file is part of Hyperf.
  *
  * @link     https://www.hyperf.io
- * @document https://doc.hyperf.io
+ * @document https://hyperf.wiki
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
@@ -20,34 +20,32 @@ class TelescopeEntryModel extends Model
      *
      * @var string
      */
-    const UPDATED_AT = null;
+    public const UPDATED_AT = null;
 
     /**
      * Prevent Eloquent from overriding uuid with `lastInsertId`.
-     *
-     * @var bool
      */
-    public $incrementing = false;
+    public bool $incrementing = false;
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'telescope_entries';
+    protected ?string $table = 'telescope_entries';
 
     /**
-     * connection name
+     * connection name.
      * @var string
      */
-    protected $connection = 'telescope';
+    protected ?string $connection = 'telescope';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
+    protected array $fillable = [
         'sequence',
         'uuid',
         'batch_id',
@@ -64,7 +62,7 @@ class TelescopeEntryModel extends Model
      *
      * @var array
      */
-    protected $casts = [
+    protected array $casts = [
         'content' => 'json',
     ];
 
@@ -73,16 +71,16 @@ class TelescopeEntryModel extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'uuid';
+    protected string $primaryKey = 'uuid';
 
     /**
      * The "type" of the auto-incrementing ID.
      *
      * @var string
      */
-    protected $keyType = 'string';
+    protected string $keyType = 'string';
 
-    protected $appends = ['id'];
+    protected array $appends = ['id'];
 
     public function getIdAttribute()
     {

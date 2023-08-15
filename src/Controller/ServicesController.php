@@ -16,23 +16,20 @@ use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\HttpServer\Annotation\PostMapping;
 use Wind\Telescope\EntryType;
 
-/**
- * @Controller
- */
+#[Controller]
 class ServicesController extends EntryController
 {
-    /**
-     * @PostMapping(path="/telescope/telescope-api/services")
-     */
+ 
+    #[PostMapping(path: '/telescope/telescope-api/services')]
     public function list()
     {
         return $this->index();
     }
 
     /**
-     * @GetMapping(path="/telescope/telescope-api/services/{id}")
      * @param mixed $id
      */
+    #[GetMapping(path: '/telescope/telescope-api/services/{id}')]
     public function detail($id)
     {
         return $this->show($id);

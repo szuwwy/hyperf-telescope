@@ -11,18 +11,19 @@ declare(strict_types=1);
  */
 namespace Wind\Telescope\Core;
 
-use Hyperf\ExceptionHandler\ExceptionHandlerDispatcher;
-use Hyperf\Utils\Context;
+use Throwable;
+use Wind\Telescope\Str;
+use Hyperf\Context\Context;
+use Hyperf\GrpcServer\Server;
+use Wind\Telescope\Event\RpcHandled;
 use Hyperf\Utils\Coordinator\Constants;
-use Hyperf\Utils\Coordinator\CoordinatorManager;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Throwable;
-use Wind\Telescope\Event\RpcHandled;
-use Wind\Telescope\Str;
+use Hyperf\Utils\Coordinator\CoordinatorManager;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Hyperf\ExceptionHandler\ExceptionHandlerDispatcher;
 
-class RpcServer extends \Hyperf\JsonRpc\TcpServer
+class RpcServer extends Server
 {
     public function onReceive($server, int $fd, int $fromId, string $data): void
     {

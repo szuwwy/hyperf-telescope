@@ -15,22 +15,17 @@ use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\View\RenderInterface;
 
-/**
- * @Controller
- */
+#[Controller]
 class ViewController
 {
-    /**
-     * @GetMapping(path="/telescope/{view}")
-     */
+   
+    #[GetMapping(path: '/telescope/{view}')]
     public function index(RenderInterface $render)
     {
         return $render->render('index');
     }
 
-    /**
-     * @GetMapping(path="/telescope/{view}/{id}")
-     */
+    #[GetMapping(path: '/telescope/{view}/{id}')]
     public function show(RenderInterface $render)
     {
         return $render->render('index');
